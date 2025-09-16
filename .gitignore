@@ -1,8 +1,6 @@
 .Rproj.user
-data/*
 .Rhistory
 .RData
 .httr-oauth
 .DS_Store
 .quarto
-!gitkeep
