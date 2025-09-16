@@ -1,0 +1,24 @@
+name: scrape.yaml
+on:
+  push:
+    branches: main
+permissions:
+  contents: write
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout this repo
+      - uses: actions/checkout@v4
+
+      # Install R
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      # Install R packages from files/DESCRIPTION (optional, keep if your script needs them)
+      - uses: r-lib/actions/setup-r-dependencies@v2
+
+      # Run the scrape.R script
+      - name: Run scrape script
+        run: Rscript scrape.R
