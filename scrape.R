@@ -7,5 +7,7 @@ from = date,
 pageSize = 10,
 apiKey = Sys.getenv("NEWS_API_KEY")
 )
+
+dir.create("data", showWarnings = FALSE)
 req_perform(req, path = paste0("data/", date, ".json"))
 
